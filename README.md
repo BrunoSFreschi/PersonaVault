@@ -50,7 +50,7 @@ O projeto está organizado em camadas seguindo os princípios da Clean Architect
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/nome-do-repo.git
+git clone https://github.com/BrunoSFreschi/PersonaVault.git
 
 # Acesse o diretório
 cd nome-do-repo
