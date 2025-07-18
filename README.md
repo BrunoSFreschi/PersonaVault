@@ -1,4 +1,6 @@
-Este projeto tem como objetivo aplicar conceitos modernos de engenharia de software utilizando o ecossistema .NET. Ele serve como base para construção de aplicações backend escaláveis e robustas, seguindo os princípios da **Clean Architecture**, **Domain-Driven Design (DDD)** com **Domínio Rico**, e **Minimal API** do .NET, com **persistência de dados em MongoDB**.
+Este projeto foi criado para ajudar desenvolvedores a aprender e aprimorar suas habilidades por meio de uma abordagem prática e modular. O objetivo é facilitar a construção de soluções escaláveis, limpas e bem estruturadas.
+
+Ele utiliza o ecossistema .NET como base e aplica conceitos modernos como Clean Architecture, Domain-Driven Design (DDD) com Domínio Rico e Minimal API, com persistência de dados em MongoDB. A estrutura do projeto foi pensada para servir como ponto de partida na criação de aplicações backend robustas e escaláveis.
 
 ## 🎯 Objetivo
 
