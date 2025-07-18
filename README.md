@@ -2,6 +2,8 @@ Este projeto foi criado para ajudar desenvolvedores a aprender e aprimorar suas 
 
 Ele utiliza o ecossistema .NET como base e aplica conceitos modernos como Clean Architecture, Domain-Driven Design (DDD) com Domínio Rico e Minimal API, com persistência de dados em MongoDB. A estrutura do projeto foi pensada para servir como ponto de partida na criação de aplicações backend robustas e escaláveis.
 
+## [Painel do Projeto](https://brunosfreschi.github.io/PersonaVault/)
+
 ## 🎯 Objetivo
 
 Criar uma arquitetura sólida e extensível que:
