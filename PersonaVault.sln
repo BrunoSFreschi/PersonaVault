@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonaVault.Api", "Source\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonaVault.Infra", "Source\Backend\PersonaVault.Infra\PersonaVault.Infra.csproj", "{1C00F2A0-4D31-4302-B5F0-E1861CCB629E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonaVault.Domain", "Source\Backend\PersonaVault.Domain\PersonaVault.Domain.csproj", "{7C941820-F690-4C9F-9458-68A6CAA69A29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{1C00F2A0-4D31-4302-B5F0-E1861CCB629E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C00F2A0-4D31-4302-B5F0-E1861CCB629E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C00F2A0-4D31-4302-B5F0-E1861CCB629E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C941820-F690-4C9F-9458-68A6CAA69A29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C941820-F690-4C9F-9458-68A6CAA69A29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C941820-F690-4C9F-9458-68A6CAA69A29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C941820-F690-4C9F-9458-68A6CAA69A29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +44,7 @@ Global
 		{AE97A093-3584-4135-92AC-C1B94AFF9BFF} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{2EAFB05F-A440-46E4-9AFE-38F912801889} = {7717B250-4F79-40AA-8EDC-1A7B0943E483}
 		{1C00F2A0-4D31-4302-B5F0-E1861CCB629E} = {7717B250-4F79-40AA-8EDC-1A7B0943E483}
+		{7C941820-F690-4C9F-9458-68A6CAA69A29} = {7717B250-4F79-40AA-8EDC-1A7B0943E483}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ECD99E88-7A2C-4625-B41A-4FDA210A9AA8}
