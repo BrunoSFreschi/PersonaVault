@@ -1,4 +1,6 @@
-﻿using PersonaVault.Domain.Entities;
+﻿using PersonaVault.Api.Request;
+using PersonaVault.Api.Response;
+using PersonaVault.Domain.Entities;
 
 namespace PersonaVault.Api.Endpoints;
 
@@ -12,7 +14,7 @@ public static class PersonaEndpoints
         group.MapGet("/", () => Results.Ok(PersonaList.AsEnumerable())).WithName("GetAllPersonas")
         .WithOpenApi();
 
-        group.MapGet("/{guid:guid}", (Guid id) =>
+        group.MapGet("/{id:guid}", (Guid id) =>
         {
             Persona? persona = PersonaList.FirstOrDefault(p => p.Id == id);
             return persona is not null ? Results.Ok(persona) : Results.NotFound();
@@ -24,15 +26,23 @@ public static class PersonaEndpoints
             return persona is not null ? Results.Ok(persona) : Results.NotFound();
         }).WithOpenApi();
 
-        group.MapPost("/Persona", (Persona Persona) =>
+        group.MapPost("/Persona", (RequestPersona request) =>
         {
-            Persona.Id = Guid.NewGuid();
+            try
+            {
+                Persona persona = new(request.Name, request.Mail);
+                ResponsePersona response = new(persona.Id, persona.Name);
+                PersonaList.Add(persona);
+                return Results.Created($"/pessoas/{response.Id}", response);
+            }
+            catch (Exception)
+            {
+                return Results.BadRequest();
+            }
 
-            PersonaList.Add(Persona);
-            return Results.Created($"/pessoas/{Persona.Id}", Persona);
         }).WithOpenApi();
 
-        group.MapDelete("/{guid:guid}", (Guid id) =>
+        group.MapDelete("/{id:guid}", (Guid id) =>
         {
             Persona? persona = PersonaList.FirstOrDefault(p => p.Id == id);
             if (persona is null) return Results.NotFound();

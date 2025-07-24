@@ -2,9 +2,9 @@
 
 public abstract class EntityBase
 {
-    public Guid Id { get; set; }
-    public bool Active { get; set; } = true;
-    public DateTime CreateOn { get; set; } = DateTime.UtcNow;
+    public Guid Id { get; protected set; } = Guid.NewGuid();
+    public bool Active { get; protected set; } = true;
+    public DateTime CreateOn { get; protected set; } = DateTime.UtcNow;
     public DateTime? UpdatedOn { get; protected set; }
 
     public void SetUpdated() => UpdatedOn = DateTime.UtcNow;
