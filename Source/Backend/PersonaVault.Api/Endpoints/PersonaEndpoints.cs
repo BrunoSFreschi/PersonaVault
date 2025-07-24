@@ -11,7 +11,11 @@ public static class PersonaEndpoints
     {
         RouteGroupBuilder group = app.MapGroup("/api/personas").WithTags("Persona");
 
-        group.MapGet("/", () => Results.Ok(PersonaList.AsEnumerable())).WithName("GetAllPersonas")
+        group.MapGet("/", () =>
+        {
+            return Results.Ok(PersonaList.Where(x => x.Active));
+        }
+        ).WithName("GetAllActivatedPerson")
         .WithOpenApi();
 
         group.MapGet("/{id:guid}", (Guid id) =>
@@ -42,12 +46,29 @@ public static class PersonaEndpoints
 
         }).WithOpenApi();
 
+        group.MapPut("/{id:guid}", (Guid id, RequestPersona request) =>
+        {
+            Persona? persona = PersonaList.FirstOrDefault(x => x.Id == id);
+            if (persona is null)
+                return Results.NotFound($"{id} don`t exist");
+
+            try
+            {
+                persona.Update(request.Name, request.Mail);
+                return Results.NoContent();
+            }
+            catch (ArgumentException ex)
+            {
+                return Results.BadRequest(new { message = ex.Message });
+            }
+
+        }).WithOpenApi();
+
         group.MapDelete("/{id:guid}", (Guid id) =>
         {
             Persona? persona = PersonaList.FirstOrDefault(p => p.Id == id);
             if (persona is null) return Results.NotFound();
-
-            PersonaList.Remove(persona);
+            persona.Deactivate();
             return Results.NoContent();
         }).WithOpenApi();
 
