@@ -1,6 +1,7 @@
 ﻿using PersonaVault.Api.Request;
 using PersonaVault.Api.Response;
 using PersonaVault.Domain.Entities;
+using PersonaVault.Domain.ValueObjects;
 
 namespace PersonaVault.Api.Endpoints;
 
@@ -15,8 +16,7 @@ public static class PersonaEndpoints
         {
             return Results.Ok(PersonaList.Where(x => x.Active));
         }
-        ).WithName("GetAllActivatedPerson")
-        .WithOpenApi();
+        ).WithName("GetAllActivatedPerson").WithOpenApi();
 
         group.MapGet("/{id:guid}", (Guid id) =>
         {
@@ -34,14 +34,17 @@ public static class PersonaEndpoints
         {
             try
             {
-                Persona persona = new(request.Name, request.Mail);
+                Name nameVO = new Name(request.Name);
+                Email emailVO = new Email(request.Mail);
+                Persona persona = new(nameVO, emailVO);
+
                 ResponsePersona response = new(persona.Id, persona.Name);
                 PersonaList.Add(persona);
                 return Results.Created($"/pessoas/{response.Id}", response);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return Results.BadRequest();
+                return Results.BadRequest(new { message = ex.Message });
             }
 
         }).WithOpenApi();
@@ -54,7 +57,10 @@ public static class PersonaEndpoints
 
             try
             {
-                persona.Update(request.Name, request.Mail);
+                Name nameVO = new Name(request.Name);
+                Email emailVO = new Email(request.Mail);
+
+                persona.Update(nameVO, emailVO);
                 return Results.NoContent();
             }
             catch (ArgumentException ex)
@@ -62,7 +68,7 @@ public static class PersonaEndpoints
                 return Results.BadRequest(new { message = ex.Message });
             }
 
-        }).WithOpenApi();
+        }).WithOpenApi().WithOrder(1);
 
         group.MapDelete("/{id:guid}", (Guid id) =>
         {
