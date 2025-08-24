@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{A4D34AEB-0554-4C96-B548-A4F768123524}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{7717B250-4F79-40AA-8EDC-1A7B0943E483}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{AE97A093-3584-4135-92AC-C1B94AFF9BFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonaVault.Api", "Source\Backend\PersonaVault.Api\PersonaVault.Api.csproj", "{2EAFB05F-A440-46E4-9AFE-38F912801889}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonaVault.Infra", "Source\Backend\PersonaVault.Infra\PersonaVault.Infra.csproj", "{1C00F2A0-4D31-4302-B5F0-E1861CCB629E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonaVault.Domain", "Source\Backend\PersonaVault.Domain\PersonaVault.Domain.csproj", "{7C941820-F690-4C9F-9458-68A6CAA69A29}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EAFB05F-A440-46E4-9AFE-38F912801889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EAFB05F-A440-46E4-9AFE-38F912801889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EAFB05F-A440-46E4-9AFE-38F912801889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EAFB05F-A440-46E4-9AFE-38F912801889}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C00F2A0-4D31-4302-B5F0-E1861CCB629E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C00F2A0-4D31-4302-B5F0-E1861CCB629E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C00F2A0-4D31-4302-B5F0-E1861CCB629E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C00F2A0-4D31-4302-B5F0-E1861CCB629E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C941820-F690-4C9F-9458-68A6CAA69A29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C941820-F690-4C9F-9458-68A6CAA69A29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C941820-F690-4C9F-9458-68A6CAA69A29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C941820-F690-4C9F-9458-68A6CAA69A29}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7717B250-4F79-40AA-8EDC-1A7B0943E483} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{AE97A093-3584-4135-92AC-C1B94AFF9BFF} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{2EAFB05F-A440-46E4-9AFE-38F912801889} = {7717B250-4F79-40AA-8EDC-1A7B0943E483}
+		{1C00F2A0-4D31-4302-B5F0-E1861CCB629E} = {7717B250-4F79-40AA-8EDC-1A7B0943E483}
+		{7C941820-F690-4C9F-9458-68A6CAA69A29} = {7717B250-4F79-40AA-8EDC-1A7B0943E483}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ECD99E88-7A2C-4625-B41A-4FDA210A9AA8}
+	EndGlobalSection
+EndGlobal
